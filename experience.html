@@ -19,90 +19,52 @@
 <ul id="menu">
 <li><a href="index.html" title="Voir la page d'accueil">Accueil</a></li>
 <li><a href="experience.html" title="Voir le formulaire">Commencer l'expérience</a></li>
-<li><a href="#" title="Voir les statistiques">Statistiques</a></li>
+<li><a href="statistiques.html" title="Voir les statistiques">Statistiques</a></li>
 <li><a href="contact.html" title="Voir la page contact">Contact</a></li>
 </ul>
 <div id="contenu">
  <h1><I><B>Expérience personnalisée:</B></I></h1>
 
 
-
-
-
  <fieldset>
 
     <legend>Informations personnelles:</legend>
 
- 
-
 <form method="post" action="traitement.php">
-
- 
 
    <p><label for="age">Age</label> : <input type="number" name="age" id="age" placeholder="25"/></p>
 
    <p><label for="taille">Taille (cm)</label> : <input type="number" name="taille" id="taille" required placeholder="180"/></p>
 
- 
-
- 
-
 <p>
 
        A quelle fréquence jouez-vous au football?<br />
-
- 
-
        <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" /> <label for="Au moins une fois par semaine">Au moins une fois par semaine</label><br />
-
        <input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" /> <label for="Entre une et trois fois par mois">Entre une et trois fois par mois</label><br />
-
        <input type="radio" name="fréquence" value="Occasionnellement" id="freq3" /> <label for="Occasionnellement">Occasionnellement</label><br />
-
    </p>
-
- 
-
     </fieldset>
 
- 
-
   <fieldset>
-
     <legend>Déterminons votre profil:</legend>
-
- 
-
    <p>
-
        Pied fort :<br required/>
-
        <input type="radio" name="pied" value="piedgauche" id="pied" /> <label for="piedgauche">Pied gauche</label><br />
-
        <input type="radio" name="pied" value="pieddroit" id="pied" /> <label for="pieddroit">Pied droit</label><br />
-
   </p>
 
    <p>
-
        Quel poste aimeriez-vous occuper?<br />
-
        <input type="radio" name="poste" value="attaquant" id="poste" /> <label for="attaquant">attaquant</label><br />
-
        <input type="radio" name="poste" value="milieu" id="poste" /> <label for="milieu">milieu</label><br />
-
        <input type="radio" name="poste" value="defenseur" id="poste" /> <label for="defenseur">defenseur</label><br />
-
        <input type="radio" name="poste" value="gardien" id="poste" /> <label for="gardien">gardien</label><br />
-
    </p>
 
-  
-
-   <p>Nous souhaitons savoir à quel point les affirmations suivantes vous correpondent. Cela sera évalué par le biais d'un pourcentage. Un pourcentage proche de 100 signifie que l'affirmation vous correspond parfaitement alors qu'un pourcentage proche de 0 signifie que cette affirmation ne vous correspond pas du tout.   </p>
+   <p>Nous souhaitons savoir à quel point les affirmations suivantes vous correpondent. Cela sera évalué par le biais d'un pourcentage. 
+   Un pourcentage proche de 100 signifie que l'affirmation vous correspond parfaitement alors qu'un pourcentage proche de 0 signifie que cette affirmation ne vous correspond pas du tout.   </p>
 
 <p>1-Quand je suis en difficultés, je préfère m'en sortir seul plûtot que de demander de l'aide </p>
-
 <label for="range"></label>
 <input type="range" name="range" id="slider1" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue1(this.value)" />
 <span id="range1">0</span>
@@ -115,7 +77,6 @@ function showValue1(newValue)
 </script>
 
 <p>2-Je suis plutôt individualiste qu'altruiste </p>
-
 <label for="range"></label>
 <input type="range" name="range" id="slider2" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue2(this.value)" />
 <span id="range2">0</span>
@@ -128,7 +89,6 @@ function showValue2(newValue)
 </script>
 
 <p>3-Dans la vie, je suis plutôt quelqu'un qui défend ses valeurs plutôt que quelqu'un qui se bat pour atteindre ses objectifs  </p>
-
 <label for="range"></label>
 <input type="range" name="range" id="slider3" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue3(this.value)" />
 <span id="range3">0</span>
@@ -141,7 +101,6 @@ function showValue3(newValue)
 </script>
 
 <p>4-Je suis plutôt offensif que protecteur  </p>
-
 <label for="range"></label>
 <input type="range" name="range" id="slider4" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue4(this.value)" />
 <span id="range4">0</span>
@@ -154,7 +113,6 @@ function showValue4(newValue)
 </script>
 
 <p>5-Je préfère courir un 200 mètres le plus vite possible plutôt que de faire un jogging de 30 minutes </p>
-
 <label for="range"></label>
 <input type="range" name="range" id="slider5" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue5(this.value)" />
 <span id="range5">0</span>
@@ -168,7 +126,6 @@ function showValue5(newValue)
 
 
 <p>6-Je suis plutôt endurant que performant </p>
- 
 <label for="range"></label>
 <input type="range" name="range" id="slider6" class="slider" min="0" max="100" step="5" value="50" style="width:220px;" onchange="showValue6(this.value)" />
 <span id="range6">0</span>
@@ -179,20 +136,9 @@ function showValue6(newValue)
    document.getElementById("range6").innerHTML=newValue;
 }
 </script>
-
- 
-
 </fieldset>
 
- 
-
- 
-
 <button type="button" onclick="myFunction()">Envoyer</button>
-
-
-
-
 
 <p id="demo"></p>
 
@@ -201,43 +147,22 @@ function showValue6(newValue)
 function myFunction() {
 
     var x, text;
-
- 
-
     // Get the value of the input field with id="numb"
-
     age = document.getElementById("age").value;
-
     taille = document.getElementById("taille").value;
-
     freq = document.getElementById("freq2").value;
-
     x = document.getElementById("slider6").value;
 
-   
-
     // If x is Not a Number or less than one or greater than 10
-
     if (isNaN(age) || x < 1 || x > 100) {
-
         market_value = "Input not valid";
-
     } else {
-
         market_value = freq;
-
     }
-
     document.getElementById("demo").innerHTML = market_value;
-
 }
 
 </script>
-
-
-
-
-
 
 <div style="clear:both;"></div>
 </div>
