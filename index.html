@@ -238,7 +238,9 @@
 		};
 		
 		$(function(){
-			$('#valider').on('click', myFunction(e));
+			$('#valider').on('click', function(e) {
+				myFunction();
+			});
 		});
 
 		</script>
