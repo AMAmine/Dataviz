@@ -49,16 +49,16 @@
     <legend>Déterminons votre profil:</legend>
    <p>
        Pied fort :<br required/>
-       <input type="radio" name="pied" value="pieddroit" id="pieddroit" /> <label for="pieddroit">Pied droit</label><br />
+       <input type="radio" name="pied" value="pieddroit" id="pieddroit" checked/> <label for="pieddroit">Pied droit</label><br />
        <input type="radio" name="pied" value="piedgauche" id="piedgauche" /> <label for="piedgauche">Pied gauche</label><br />
   </p>
 
    <p>
        Quel poste aimeriez-vous occuper?<br />
-       <input type="radio" name="poste" value="attaquant" id="poste" /> <label for="attaquant">attaquant</label><br />
-       <input type="radio" name="poste" value="milieu" id="poste" /> <label for="milieu">milieu</label><br />
-       <input type="radio" name="poste" value="defenseur" id="poste" /> <label for="defenseur">defenseur</label><br />
-       <input type="radio" name="poste" value="gardien" id="poste" /> <label for="gardien">gardien</label><br />
+       <input type="radio" name="poste" value="attaquant" id="poste_att" checked /> <label for="attaquant">attaquant</label><br />
+       <input type="radio" name="poste" value="milieu" id="poste_mil" /> <label for="milieu">milieu</label><br />
+       <input type="radio" name="poste" value="defenseur" id="poste_def" /> <label for="defenseur">defenseur</label><br />
+       <input type="radio" name="poste" value="gardien" id="poste_gar" /> <label for="gardien">gardien</label><br />
    </p>
 
    <p>Nous souhaitons savoir à quel point les affirmations suivantes vous correpondent. Cela sera évalué par le biais d'un pourcentage. 
@@ -155,6 +155,18 @@ function myFunction() {
         pied="Right";
     }
 
+    if (document.getElementById("poste_att").checked){
+        poste="attacker";
+    } else if (document.getElementById("poste_mil").checked) {
+        poste="midfielder";
+    } else if (document.getElementById("poste_def").checked) {
+        poste="defender";
+    } else if (document.getElementById("poste_gar").checked) {
+        poste="defender"; // pas de gardiens dans les centroïdes
+    } else {
+        poste="attacker";
+    }
+
     taille = Number(document.getElementById("taille").value);
     freq = Number(document.getElementById("freq2").value);
     x = Number(document.getElementById("slider6").value);
@@ -173,16 +185,16 @@ function myFunction() {
 
     var distances = [];
     var variances={};
-    var joueurspiedfort = joueurscentraux.filter(function (val){
-        return val.foot==pied;
+    var joueurs_filter = joueurscentraux.filter(function (val){
+        return val.foot==pied & val.type==poste;
     });
 
-    for (i = 0; i<joueurspiedfort.length; i++) {
-        distances.push([i,Math.sqrt(Math.pow((age-joueurspiedfort[i].age),2))]);
+    for (i = 0; i<joueurs_filter.length; i++) {
+        distances.push([i,Math.sqrt(Math.pow((age-joueurs_filter[i].age),2))]);
     }
     distances.sort(function(a, b){return a[1]-b[1]});
-    joueurplusproche = joueurspiedfort[distances[0][0]].player;
-    document.getElementById("demo").innerHTML = market_value + joueurplusproche;
+    joueurplusproche = joueurs_filter[distances[0][0]].player;
+    document.getElementById("demo").innerHTML = market_value + "<br>"+ joueurplusproche;
 };
 
 
