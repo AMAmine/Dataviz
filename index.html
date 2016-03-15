@@ -68,8 +68,6 @@
 
 		<legend>Informations personnelles</legend>
 
-		<form method="post" action="traitement.php" role="form">
-
 		   <p width="30"><label for="age">Age</label> : <input id="age" type="text" value="25" name="age">
 		        <script>
 		            $("input[name='age']").TouchSpin({
@@ -181,12 +179,16 @@
 
 		</fieldset>
 
-		<button type="button" class="btn btn-success" onclick="myFunction()">Je deviens footballeur !</button>
+		<button id="valider" type="button" class="btn btn-success" click="myFunction()">Je deviens footballeur !</button>
 
 		<p id="demo"></p>
 
 		<script>
-
+		$(function(){
+			$('#valider').on('click', function (e) {
+			    alert('Hello!');
+			});
+		});
 		function myFunction() {
 
 		    var x, text;
