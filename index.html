@@ -20,10 +20,10 @@
 	<link href="styles/jquery.bootstrap-touchspin.css" rel="stylesheet">
 	<script src="styles/jquery.bootstrap-touchspin.js"></script>
 	<style>
-	  body {
-	      font: 16px Montserrat, sans-serif;
-	      line-height: 1.8;
-	  }	  
+		body {
+			font: 16px Montserrat, sans-serif;
+			line-height: 1.8;
+		}	  
 	</style>
 	<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
 </head>
@@ -63,44 +63,67 @@
     <div id="menu1" class="tab-pane fade" style="width:100%">
       		<h3>Quel footballeur es-tu ?</h3>
 
-
-		<div class="well-sm" id="infosperso">
-
 		<legend>Informations personnelles</legend>
+		<div class="well-sm" id="infosperso">
+		    <form class="form-horizontal">
+			<div class="form-group">
+			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2">Ton pseudo</label>
+			    <div class="col-xs-10 col-sm-4  col-md-2">
+				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
+			    </div>
+			</div>
 
-		   <p width="30"><label for="age">Age</label> : <input id="age" type="text" value="25" name="age">
-		        <script>
-		            $("input[name='age']").TouchSpin({
-		                min: 0,
-		                max: 100,
-		                step: 1,
-		                decimals: 0,
-		                boostat: 5,
-		                maxboostedstep: 10,
-		                postfix: 'ans'
-		            });
-		        </script></p>
+	 		<div class="form-group"><label for="age" class="control-label col-xs-8 col-sm-4 col-md-2">Age</label>
+				<div class="col-xs-10 col-sm-4 col-md-2">
+					<input id="age" type="text" value="25" name="age" class="form-control">
+					<script>
+					   $("input[name='age']").TouchSpin({
+						min: 2,
+						max: 100,
+						step: 1,
+						decimals: 0,
+						boostat: 5,
+						maxboostedstep: 10,
+						postfix: 'ans'
+					   });
+					</script>
+				</div>
+			   </div>
 
-		   <p><label for="taille">Taille (cm)</label> : <input type="number" name="taille" id="taille" required placeholder="180"/></p>
+			<div class="form-group">
+			        <label for="taille" class="control-label col-xs-8 col-sm-4 col-md-2">Taille</label>
+			        <div class="col-xs-10 col-sm-4 col-md-2">
+					<input id="taille" type="text" value="180" name="taille" class="form-control">
+					<script>
+					   $("input[name='taille']").TouchSpin({
+						min: 100,
+						max: 230,
+						step: 5,
+						decimals: 0,
+						boostat: 10,
+						maxboostedstep: 20,
+						postfix: 'cm'
+					   });
+					</script>
+				</div>
+			</div>
 
-		<p>
+		    </form>
 
-		       A quelle fréquence jouez-vous au football?<br />
-		       <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" /> <label for="Au moins une fois par semaine">Au moins une fois par semaine</label><br />
-		       <input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" /> <label for="Entre une et trois fois par mois">Entre une et trois fois par mois</label><br />
-		       <input type="radio" name="fréquence" value="Occasionnellement" id="freq3" /> <label for="Occasionnellement">Occasionnellement</label><br />
+		   <p>    A quelle fréquence jouez-vous au football?<br />
+		       <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" /> <label for="Au moins une fois par semaine" class="control-label row-xs-2">Au moins une fois par semaine</label><br />
+		       <input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" /> <label for="Entre une et trois fois par mois" class="control-label row-xs-2">Entre une et trois fois par mois</label><br />
+		       <input type="radio" name="fréquence" value="Occasionnellement" id="freq3" /> <label for="Occasionnellement" class="control-label row-xs-2">Occasionnellement</label><br />
 		   </p>
 		</div>
-
-		  <fieldset>
 		    <legend>Votre profil de footballeur</legend>
 		   <p>
 		       Pied fort :<br required/>
 			<div class="radio">
-				<label><input type="radio" name="pied" value="pieddroit" id="pieddroit" checked/>Pied droit</label>
+				<label class="control-label row-xs-2"><input type="radio" name="pied" value="pieddroit" id="pieddroit" checked/>Pied droit</label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="pied" value="piedgauche" id="piedgauche" />Pied gauche</label>
+				<label class="control-label row-xs-2"><input type="radio" name="pied" value="piedgauche" id="piedgauche" />Pied gauche</label>
 			</div>
 		  </p>
 
