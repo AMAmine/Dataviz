@@ -24,6 +24,16 @@
 			font: 16px Montserrat, sans-serif;
 			line-height: 1.8;
 		}	  
+		.slider-handle.custom {
+			background: white;
+		/* You can customize the handle and set a background image */
+		}
+		.slider-handle.custom::before {
+			line-height: 26px;
+			font-size: 24px;
+			content: url("images/ball.png"); /*unicode star character*/
+			color: transparent;
+		}
 	</style>
 	<!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
 </head>
@@ -68,13 +78,13 @@
 		    <div class="well-sm" id="infosperso">
 			<legend>Informations générales</legend>
 			<div class="form-group">
-			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
+			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Ton pseudo</label>
 			    <div class="col-xs-10 col-sm-4 col-md-3">
 				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
 			    </div>
 			</div>
 
-	 		<div class="form-group"><label for="age" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Age</label>
+	 		<div class="form-group"><label for="age" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Age</label>
 				<div class="col-xs-10 col-sm-4 col-md-3 col-lg-2">
 					<input id="age" type="text" value="25" name="age" class="form-control">
 					<script>
@@ -92,7 +102,7 @@
 			   </div>
 
 			<div class="form-group">
-			        <label for="taille" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Taille</label>
+			        <label for="taille" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Taille</label>
 			        <div class="col-xs-10 col-sm-4 col-md-3 col-lg-2">
 					<input id="taille" type="text" value="180" name="taille" class="form-control">
 					<script>
@@ -108,18 +118,11 @@
 					</script>
 				</div>
 			</div>
-
-			<div class="form-group">
-			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
-			    <div class="col-xs-10 col-sm-4 col-md-3">
-				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
-			    </div>
-			</div>
 		    </div>
-		    <div class="well-sm" id="infosperso">
-		    	<legend>Traits de caractère et style de jeu</legend>
+		    <div class="well-sm" id="infosposition">
+		    	<legend>Positionnement sur le terrain</legend>
 			<div class="form-group">
-			    <label for="pied" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Quel est ton pied fort&nbsp;?</label>
+			    <label for="pied" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Quel est ton pied fort&nbsp;?</label>
 			    <div class="radio col-xs-10 col-sm-6 col-md-6 col-lg-3">
 				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
 					<label> <input type="radio" name="pied" value="pieddroit" id="pieddroit" />Pied droit</label>
@@ -129,42 +132,82 @@
 				    </div>
 			    </div>
 			</div>
+			<div class="form-group">
+			    <label for="poste" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Quel poste voudrais-tu occuper&nbsp;?</label>
+			    <div class="radio col-xs-10 col-sm-6 col-md-6 col-lg-3">
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label> <input type="radio" name="poste" value="attaquant" id="poste_att" />Attaquant</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label><input type="radio" name="poste" value="milieu" id="poste_mil" />Milieu</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label> <input type="radio" name="poste" value="defenseur" id="poste_def" />Défenseur</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label><input type="radio" name="poste" value="gardien" id="poste_gar" />Gardien</label>
+				    </div>
+			    </div>
+			</div>
 		    </div>
+		    <div class="well-sm" id="infoscaractère">
+		    	<legend>Traits de caractère et style de jeu</legend>
+			<div class="row">
+				<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+					Les questions suivantes permettent d'imaginer quel pourrait être ton style de jeu de footballeur. Tes réponses seront prises en compte dans le calcul de ta valeur. <mark bgcolor="red"> En savoir plus sur le calcul</mark>
+				</div>
+			</div>
+			<div class="form-group">
+			    <label for="slider1" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Quand tu es en difficulté, tu préfères&nbsp;:</label>
+			    <div class="row col-xs-12 col-sm-10 col-md-8 col-lg-8">
+				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<label>t'en sortir seul</label>
+				    </div>
+				    <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 center" style="justify-content: center">
+					<input id="slider1" type="text" 
+						data-provide="slider" 
+						data-slider-handle="custom" 
+						data-slider-min="1" 
+						data-slider-max="5" 
+						data-slider-step="1" 
+						data-slider-value="3" 
+						data-slider-tooltip="hide" />
+				    </div>
+				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<label>demander de l'aide</label>
+				    </div>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="slider2" class="control-label col-xs-8 col-sm-4 col-md-3 col-lg-3">Tu te définis plutôt comme&nbsp;:</label>
+			    <div class="row col-xs-12 col-sm-10 col-md-8 col-lg-8">
+				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<label>indépendant</label>
+				    </div>
+				    <div class="col-xs-6 col-sm-5 col-md-3 col-lg-3 center" style="justify-content: center">
+					<input id="slider2" type="text" 
+						data-provide="slider" 
+						data-slider-handle="custom" 
+						data-slider-min="1" 
+						data-slider-max="5" 
+						data-slider-step="1" 
+						data-slider-value="3" 
+						data-slider-tooltip="hide" />
+				    </div>
+				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<label>lié aux autres</label>
+				    </div>
+			    </div>
+			</div>
+		    </div>
+
 		</form>
-		    
-		   <p>
-		       Pied fort :<br required/>
-			<div class="radio">
-				<label class="control-label row-xs-2"><input type="radio" name="pied" value="pieddroit" id="pieddroit" checked/>Pied droit</label>
-			</div>
-			<div class="radio">
-				<label class="control-label row-xs-2"><input type="radio" name="pied" value="piedgauche" id="piedgauche" />Pied gauche</label>
-			</div>
-		  </p>
 
-		   <p>
-		       Quel poste aimeriez-vous occuper?<br />
-		       <input type="radio" name="poste" value="attaquant" id="poste_att" checked /> <label for="attaquant">attaquant</label><br />
-		       <input type="radio" name="poste" value="milieu" id="poste_mil" /> <label for="milieu">milieu</label><br />
-		       <input type="radio" name="poste" value="defenseur" id="poste_def" /> <label for="defenseur">defenseur</label><br />
-		       <input type="radio" name="poste" value="gardien" id="poste_gar" /> <label for="gardien">gardien</label><br />
-		   </p>
 
-		   <p>Nous souhaitons savoir à quel point les affirmations suivantes vous correpondent. Cela sera évalué par le biais d'un pourcentage. 
-		   Un pourcentage proche de 100 signifie que l'affirmation vous correspond parfaitement alors qu'un pourcentage proche de 0 signifie que cette affirmation ne vous correspond pas du tout.   </p>
-
-		<p>1-Quand je suis en difficulté, je préfère :</p>
-		<b>m'en sortir seul &nbsp;&nbsp;</b>
-		<input id="slider1" type="text"
-		      data-provide="slider"
-		      data-slider-ticks="[1, 2, 3, 4, 5]"
-		      data-slider-min="1"
-		      data-slider-max="5"
-		      data-slider-step="1"
-		      data-slider-value="3"
-		      data-slider-tooltip="hide"/> <b>&nbsp;&nbsp;demander de l'aide</b>
+		<p></p>
+		<b></b>
 		<div>&nbsp;</div>
-		<p>2-Je suis plutôt... </p>
+		<p>Tu es plutôt...</p>
 		<b>individualiste &nbsp;&nbsp;</b>
 		<input id="slider2" type="text"
 		      data-provide="slider"
