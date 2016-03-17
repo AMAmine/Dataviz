@@ -67,14 +67,14 @@
 		<div class="well-sm" id="infosperso">
 		    <form class="form-horizontal">
 			<div class="form-group">
-			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2">Ton pseudo</label>
-			    <div class="col-xs-10 col-sm-4  col-md-2">
+			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
+			    <div class="col-xs-10 col-sm-4 col-md-3">
 				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
 			    </div>
 			</div>
 
-	 		<div class="form-group"><label for="age" class="control-label col-xs-8 col-sm-4 col-md-2">Age</label>
-				<div class="col-xs-10 col-sm-4 col-md-2">
+	 		<div class="form-group"><label for="age" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Age</label>
+				<div class="col-xs-10 col-sm-4 col-md-3 col-lg-2">
 					<input id="age" type="text" value="25" name="age" class="form-control">
 					<script>
 					   $("input[name='age']").TouchSpin({
@@ -91,8 +91,8 @@
 			   </div>
 
 			<div class="form-group">
-			        <label for="taille" class="control-label col-xs-8 col-sm-4 col-md-2">Taille</label>
-			        <div class="col-xs-10 col-sm-4 col-md-2">
+			        <label for="taille" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Taille</label>
+			        <div class="col-xs-10 col-sm-4 col-md-3 col-lg-2">
 					<input id="taille" type="text" value="180" name="taille" class="form-control">
 					<script>
 					   $("input[name='taille']").TouchSpin({
@@ -107,11 +107,30 @@
 					</script>
 				</div>
 			</div>
-
+			<div class="form-group">
+			    <label for="fréquence" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">À quelle fréquence joues-tu au football?</label>
+			    <div class="radio col-xs-10 col-sm-6 col-md-6 col-lg-3">
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label> <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" />Au moins une fois par semaine</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label><input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" />Entre une et trois fois par mois</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label><input type="radio" name="fréquence" value="Occasionnellement" id="freq3" />Occasionnellement</label>
+				    </div>
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
+			    <div class="col-xs-10 col-sm-4 col-md-3">
+				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
+			    </div>
+			</div>
 		    </form>
 
-		   <p>    A quelle fréquence jouez-vous au football?<br />
-		       <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" /> <label for="Au moins une fois par semaine" class="control-label row-xs-2">Au moins une fois par semaine</label><br />
+		   <p>    <br />
+		       <br />
 		       <input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" /> <label for="Entre une et trois fois par mois" class="control-label row-xs-2">Entre une et trois fois par mois</label><br />
 		       <input type="radio" name="fréquence" value="Occasionnellement" id="freq3" /> <label for="Occasionnellement" class="control-label row-xs-2">Occasionnellement</label><br />
 		   </p>
