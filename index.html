@@ -61,11 +61,12 @@
 	#############################################################################################
 	############################################################################################# -->
     <div id="menu1" class="tab-pane fade" style="width:100%">
-      		<h3>Quel footballeur es-tu ?</h3>
+      		<h3>Quel footballeur es-tu&nbsp;?</h3>
 
-		<legend>Informations personnelles</legend>
-		<div class="well-sm" id="infosperso">
-		    <form class="form-horizontal">
+		
+		<form class="form-horizontal">
+		    <div class="well-sm" id="infosperso">
+			<legend>Informations générales</legend>
 			<div class="form-group">
 			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
 			    <div class="col-xs-10 col-sm-4 col-md-3">
@@ -107,35 +108,30 @@
 					</script>
 				</div>
 			</div>
-			<div class="form-group">
-			    <label for="fréquence" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">À quelle fréquence joues-tu au football?</label>
-			    <div class="radio col-xs-10 col-sm-6 col-md-6 col-lg-3">
-				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
-					<label> <input type="radio" name="fréquence" value="Au moins une fois par semaine" id="freq1" />Au moins une fois par semaine</label>
-				    </div>
-				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
-					<label><input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" />Entre une et trois fois par mois</label>
-				    </div>
-				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
-					<label><input type="radio" name="fréquence" value="Occasionnellement" id="freq3" />Occasionnellement</label>
-				    </div>
-			    </div>
-			</div>
+
 			<div class="form-group">
 			    <label for="pseudo" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Ton pseudo</label>
 			    <div class="col-xs-10 col-sm-4 col-md-3">
 				<input type="text" class="form-control" id="pseudo" placeholder="Messi">
 			    </div>
 			</div>
-		    </form>
-
-		   <p>    <br />
-		       <br />
-		       <input type="radio" name="fréquence" value="Entre une et trois fois par mois" id="freq2" /> <label for="Entre une et trois fois par mois" class="control-label row-xs-2">Entre une et trois fois par mois</label><br />
-		       <input type="radio" name="fréquence" value="Occasionnellement" id="freq3" /> <label for="Occasionnellement" class="control-label row-xs-2">Occasionnellement</label><br />
-		   </p>
-		</div>
-		    <legend>Votre profil de footballeur</legend>
+		    </div>
+		    <div class="well-sm" id="infosperso">
+		    	<legend>Traits de caractère et style de jeu</legend>
+			<div class="form-group">
+			    <label for="pied" class="control-label col-xs-8 col-sm-4 col-md-2 col-lg-2">Quel est ton pied fort&nbsp;?</label>
+			    <div class="radio col-xs-10 col-sm-6 col-md-6 col-lg-3">
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label> <input type="radio" name="pied" value="pieddroit" id="pieddroit" />Pied droit</label>
+				    </div>
+				    <div class="radio col-xs-16 col-sm-16 col-md-16 col-lg-16">
+					<label><input type="radio" name="pied" value="piedgauche" id="piedgauche" />Pied gauche</label>
+				    </div>
+			    </div>
+			</div>
+		    </div>
+		</form>
+		    
 		   <p>
 		       Pied fort :<br required/>
 			<div class="radio">
