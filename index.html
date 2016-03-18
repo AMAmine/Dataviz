@@ -243,10 +243,10 @@
 					<input id="slider3" type="text" 
 						data-provide="slider" 
 						data-slider-handle="custom" 
-						data-slider-min="1" 
-						data-slider-max="5" 
-						data-slider-step="1" 
-						data-slider-value="3" 
+						data-slider-min="0" 
+						data-slider-max="100" 
+						data-slider-step="20" 
+						data-slider-value="50" 
 						data-slider-tooltip="hide" />
 				    </div>
 				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -264,10 +264,10 @@
 					<input id="slider4" type="text" 
 						data-provide="slider" 
 						data-slider-handle="custom" 
-						data-slider-min="1" 
-						data-slider-max="5" 
-						data-slider-step="1" 
-						data-slider-value="3" 
+						data-slider-min="0" 
+						data-slider-max="100" 
+						data-slider-step="20" 
+						data-slider-value="50" 
 						data-slider-tooltip="hide" />
 				    </div>
 				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -285,10 +285,10 @@
 					<input id="slider5" type="text" 
 						data-provide="slider" 
 						data-slider-handle="custom" 
-						data-slider-min="1" 
-						data-slider-max="5" 
-						data-slider-step="1" 
-						data-slider-value="3" 
+						data-slider-min="0" 
+						data-slider-max="100" 
+						data-slider-step="20" 
+						data-slider-value="50" 
 						data-slider-tooltip="hide" />
 				    </div>
 				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -306,10 +306,10 @@
 					<input id="slider6" type="text" 
 						data-provide="slider" 
 						data-slider-handle="custom" 
-						data-slider-min="1" 
-						data-slider-max="5" 
-						data-slider-step="1" 
-						data-slider-value="3" 
+						data-slider-min="0" 
+						data-slider-max="100" 
+						data-slider-step="20" 
+						data-slider-value="50" 
 						data-slider-tooltip="hide" />
 				    </div>
 				    <div class="radio control-label col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -330,7 +330,7 @@
 		<button id="valider" type="button" class="btn btn-success pull-right" click="myFunction()">Deviens footballeur&nbsp;!</button>
 		</div>
 		
-		<p id="demo"></p>
+		<div class="col-xs-12" id="demo"><br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
 
 		<script>
 		function myFunction() {
@@ -382,8 +382,8 @@
 		    slider5 = Number(document.getElementById("slider5").value);
 		    slider6 = Number(document.getElementById("slider6").value);
 		    string1 = "Merci, cher " 
-		    string2 = ", d'avoir tenté l'expérience. Ta valeur en tant que footballeur est estimée à " 
-		    string3 = "$. <a data-toggle='tab' href='#menu2'><mark>Pour avoir davantage d'explications, c'est ici.</mark></a> "
+		    string2 = ", d'avoir tenté l'expérience. Ta valeur en tant que footballeur est estimée à $ " 
+		    string3 = ". <a data-toggle='tab' href='#menu2'><mark>Pour avoir davantage d'explications, c'est ici.</mark></a> "
 
 		 
 
@@ -403,38 +403,38 @@
 		    if(vitesse>90){
 		    	vitesse=90;
 		    }
-		    if(vitesse<30){
-		    	vitesse=30;
+		    if(vitesse<70){
+		    	vitesse=70;
 		    }
 		    if(shooting>90){
 		    	shooting=90;
 		    }
-		    if(shooting<30){
-		    	shooting=30;
+		    if(shooting<70){
+		    	shooting=70;
 		    }
 		    if(passe>90){
 		    	passe=90;
 		    }
-		    if(passe<30){
-		    	passe=30;
+		    if(passe<70){
+		    	passe=70;
 		    }
 		    if(dribble>90){
 		    	dribble=90;
 		    }
-		    if(dribble<30){
-		    	dribble=30;
+		    if(dribble<70){
+		    	dribble=70;
 		    }
 		    if(defending>90){
 		    	defending=90;
 		    }
-		    if(defending<30){
-		    	defending=30;
+		    if(defending<70){
+		    	defending=70;
 		    }
 		    if(physique>90){
 		    	physique=90;
 		    }
-		    if(physique<30){
-		    	physique=30;
+		    if(physique<70){
+		    	physique=70;
 		    }
 
 		    //coefficients de la régression :
@@ -467,7 +467,9 @@
 		    coef_physique4 = 0.03124;
 		    coef_shooting4 = 8.61;
 
-      	            market_value = intercept+coef_age*age+coef_vitesse*vitesse+coef_shooting*shooting+coef_dribble*dribble+coef_defending*defending+coef_age2*age*age+coef_vitesse2*vitesse*vitesse+coef_dribble2*dribble*dribble+coef_passe2*passe*passe+coef_defending2*defending*defending+coef_shooting2*shooting*shooting+coef_age3*age*age*age+coef_vitesse3*vitesse*vitesse*vitesse+coef_dribble3*dribble*dribble*dribble+coef_passe3*passe*passe*passe+coef_defending3*defending*defending*defending+coef_shooting3*shooting*shooting*shooting+coef_vitesse4*vitesse*vitesse*vitesse*vitesse+coef_dribble4*dribble*dribble*dribble*dribble+coef_passe4*passe*passe*passe*passe+coef_defending4*defending*defending*defending*defending+coef_physique4*physique*physique*physique*physique+coef_shooting4*shooting*shooting*shooting*shooting;
+      	            market_value = intercept+coef_age*age+coef_vitesse*vitesse+coef_shooting*shooting+coef_dribble*dribble+coef_defending*defending+coef_age2*age*age+coef_vitesse2*vitesse*vitesse+coef_dribble2*dribble*dribble+coef_passe2*passe*passe+coef_defending2*defending*defending+coef_shooting2*shooting*shooting
+
+//+coef_age3*age*age*age+coef_vitesse3*vitesse*vitesse*vitesse+coef_dribble3*dribble*dribble*dribble+coef_passe3*passe*passe*passe+coef_defending3*defending*defending*defending+coef_shooting3*shooting*shooting*shooting+coef_vitesse4*vitesse*vitesse*vitesse*vitesse+coef_dribble4*dribble*dribble*dribble*dribble+coef_passe4*passe*passe*passe*passe+coef_defending4*defending*defending*defending*defending+coef_physique4*physique*physique*physique*physique+coef_shooting4*shooting*shooting*shooting*shooting;
 		    if(poste=="keeper"){
 				market_value=market_value+coef_gardien;
 		    }
@@ -559,11 +561,11 @@
 
 
 
-<footer class="footer">
-      <div class="container">
+<div>
+      <div class="container col-xs-12">
         <p class="text-muted">© <I>"Et si j'étais footballeur?"<I/></p>
       </div>
-    </footer>
+    </div>
 
 </body>
 
