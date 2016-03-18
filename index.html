@@ -62,7 +62,7 @@
 
 <div class="jumbotron" id="bandeau" style="background:url('images/but.jpg') no-repeat center center; fixed-webkit-background-size: cover;  -moz-background-size: cover; -o-background-size: cover;background-size: cover; line-height: 200%;">
 	<div class="h1"><mark style="background-color: rgba(245, 245, 245, 0.4);">Deviens footballeur</mark></div>
-	<div class="col-xs-12" style="height:20px;">&nbsp;</div>
+	<div class="col-xs-12" style="height:20px;">&nbsp</div>
 	<h2><mark style="background-color: rgba(245, 245, 245, 0.4)">Tu en as rêvé, nous l'avons fait&nbsp;!</mark></h2>
 </div>
  
@@ -468,13 +468,13 @@
 		    coef_shooting4 = 8.61;
 
       	            market_value = intercept+coef_age*age+coef_vitesse*vitesse+coef_shooting*shooting+coef_dribble*dribble+coef_defending*defending+coef_age2*age*age+coef_vitesse2*vitesse*vitesse+coef_dribble2*dribble*dribble+coef_passe2*passe*passe+coef_defending2*defending*defending+coef_shooting2*shooting*shooting+coef_age3*age*age*age+coef_vitesse3*vitesse*vitesse*vitesse+coef_dribble3*dribble*dribble*dribble+coef_passe3*passe*passe*passe+coef_defending3*defending*defending*defending+coef_shooting3*shooting*shooting*shooting+coef_vitesse4*vitesse*vitesse*vitesse*vitesse+coef_dribble4*dribble*dribble*dribble*dribble+coef_passe4*passe*passe*passe*passe+coef_defending4*defending*defending*defending*defending+coef_physique4*physique*physique*physique*physique+coef_shooting4*shooting*shooting*shooting*shooting;
-		    if(poste="keeper"){
+		    if(poste=="keeper"){
 				market_value=market_value+coef_gardien;
 		    }
-		    if(poste="midfielder"){
+		    if(poste=="midfielder"){
 				market_value=market_value+coef_milieu;
 		    }
-		    if(poste="defender"){
+		    if(poste=="defender"){
 			    market_value=market_value+coef_defenseur;
 		    }
 		    
